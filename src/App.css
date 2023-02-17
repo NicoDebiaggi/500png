@@ -2,13 +2,15 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-y: hidden;
-  background: linear-gradient(253.21deg, #ffffff 1.76%, #7fdae8 55.2%);
+  background-image: url('doge-min.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .app {
-  padding: 0;
-  position: relative;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(200deg, #ffffffa1 1.76%, #6f80f0af 55.2%);
 }
 
 .image {
@@ -16,5 +18,27 @@ body {
   pointer-events: none;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   top: 50%;
-  left: 50%
+  left: 50%;
+  animation: move 10s linear infinite;
+  transform: translate(-50%, -50%);
+  --randomnessDelta: 1000px;
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(calc(var(--randomnessDelta)), calc(var(--randomnessDelta) * 0.5));
+  }
+  25% {
+    transform: translate(calc(var(--randomnessDelta) * 0.7), calc(var(--randomnessDelta) * 1.3));
+  }
+  50% {
+    transform: translate(calc(var(--randomnessDelta) * -1.3), calc(var(--randomnessDelta)) * -0.7);
+  }
+  75% {
+    transform: translate(calc(var(--randomnessDelta) * 1.3), calc(var(--randomnessDelta) * -1.5));
+  }
+  100% {
+    transform: translate(calc(var(--randomnessDelta)), calc(var(--randomnessDelta) * 0.5));
+  }
 }
