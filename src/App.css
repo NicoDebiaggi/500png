@@ -41,4 +41,5 @@ body {
   100% {
     transform: translate(calc(var(--randomnessDelta)), calc(var(--randomnessDelta) * 0.5));
   }
+
 }
